@@ -10,6 +10,12 @@ using namespace cv;
 using namespace std;
 
 namespace Multicambot {
+	struct ImgProcessInfo {
+		Mat image;
+		Mat features;
+		Mat description;
+	}
+
 	enum {LEFT1, LEFT0, FRONT, RIGHT0, RIGHT1};
 
 	MultiCamCalib::MultiCamCalib(ros::NodeHandle nh) : it_(nh) {
@@ -39,6 +45,10 @@ namespace Multicambot {
 	}
 
 	void MultiCamCalib::Calibration() {
-		
+		for(int i = 0; i < (CAM_NUM - 1); i++) {
+			Mat img_prev = img_container.img_vec[i];
+			Mat img_curr = img_container.img_vec[i + 1];
+
+		}
 	}
 }

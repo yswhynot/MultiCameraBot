@@ -8,13 +8,18 @@
 #include <vector>
 
 namespace Multicambot {
+	const int CAM_NUM = 5;
+
 	struct ImgContainer {
-		ImgContainer() {image_vec.reserve(5);}
+		ImgContainer() {image_vec.reserve(CAM_NUM);}
 		vector<Mat> image_vec;
 		bool isFull() {
-			return !(image_vec[0].empty() || image_vec[1].empty()
-				|| image_vec[2].empty() || image_vec[3].empty()
-				|| image_vec[4].empty()); 
+			bool is_full = true;
+			for(int i = 0; i < CAM_NUM; i++) {
+				if(image_vec[i].empty())
+					is_full = false;
+			}
+			return is_full;
 		}
 
 	};
