@@ -81,27 +81,6 @@
 	</link>
 
 	<!-- Camera -->
-	<link name="camera_front">
-		<inertial>
-			<mass value="0.1" />
-			<inertia ixx="0.000166667" iyy="0.000166667" izz="0.000166667" ixy="0" ixz="0" iyz="0" />
-		</inertial>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-		</collision>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-			<material name="red">
-				<color rgba="0.8 0 0 1" />
-			</material>
-		</visual>
-	</link>
 
 	<!-- <link name="camera_back">
 		<inertial>
@@ -147,45 +126,7 @@
 		</visual>
 	</link>
 
-	<link name="camera_left1">
-		<inertial>
-			<mass value="0.1" />
-			<inertia ixx="0.000166667" iyy="0.000166667" izz="0.000166667" ixy="0" ixz="0" iyz="0" />
-		</inertial>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-		</collision>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-		</visual>
-	</link>
-
 	<link name="camera_right0">
-		<inertial>
-			<mass value="0.1" />
-			<inertia ixx="0.000166667" iyy="0.000166667" izz="0.000166667" ixy="0" ixz="0" iyz="0" />
-		</inertial>
-		<collision>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-		</collision>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0" />
-			<geometry>
-				<box size="${camera_link} ${camera_link} ${camera_link}" />
-			</geometry>
-		</visual>
-	</link>
-
-	<link name="camera_right1">
 		<inertial>
 			<mass value="0.1" />
 			<inertia ixx="0.000166667" iyy="0.000166667" izz="0.000166667" ixy="0" ixz="0" iyz="0" />
@@ -234,47 +175,18 @@
 		<axis xyz="0 1 0" />
 	</joint>
 
-	<joint name="camera_front_joint" type="fixed">
-		<axis xyz="0 1 0" />
-		<origin xyz="-0.2 0 0.2" rpy="0 0 ${PI}" />
-		<parent link="chassis" />
-		<child link="camera_front" />
-	</joint>
-
 	<joint name="camera_left0_joint" type="fixed">
 		<axis xyz="0 1 0" />
-		<origin xyz="-0.17 -0.08 0.2" rpy="0 0 ${-PI*5/6}" />
+		<origin xyz="0 -0.08 0.2" rpy="0 0 ${-PI/2}" />
 		<parent link="chassis" />
 		<child link="camera_left0" />
 	</joint>
 
-	<joint name="camera_left1_joint" type="fixed">
-		<axis xyz="0 1 0" />
-		<origin xyz="-0.07 -0.1 0.2" rpy="0 0 ${-PI*4/6}" />
-		<parent link="chassis" />
-		<child link="camera_left1" />
-	</joint>
-
 	<joint name="camera_right0_joint" type="fixed">
 		<axis xyz="0 1 0" />
-		<origin xyz="-0.17 0.08 0.2" rpy="0 0 ${PI*5/6}" />
+		<origin xyz="0 0.08 0.2" rpy="0 0 ${PI/2}" />
 		<parent link="chassis" />
 		<child link="camera_right0" />
 	</joint>
-
-	<joint name="camera_right1_joint" type="fixed">
-		<axis xyz="0 1 0" />
-		<origin xyz="-0.07 0.1 0.2" rpy="0 0 ${PI*4/6}" />
-		<parent link="chassis" />
-		<child link="camera_right1" />
-	</joint>
-	
-	<!-- <joint name="camera_back_joint" type="fixed">
-		<axis xyz="0 1 0" />
-		<origin xyz="0.2 0 0.2" rpy="0 0 0" />
-		<parent link="chassis" />
-		<child link="camera_back" />
-	</joint> -->
-
 
 </robot>

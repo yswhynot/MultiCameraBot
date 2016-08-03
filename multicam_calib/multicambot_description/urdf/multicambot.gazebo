@@ -24,49 +24,14 @@
 	</gazebo>
 
 	<!-- camera -->
-	<gazebo reference="camera_front">
-		<mu1>0.2</mu1>
-		<mu2>0.2</mu2>
-		<sensor type="camera" name="camera_front">
-			<update_rate>30.0</update_rate>
-			<camera name="front">
-				<horizontal_fov>1.3962634</horizontal_fov>
-				<image>
-					<width>800</width>
-					<height>600</height>
-					<format>R8G8B8</format>
-				</image>
-				<clip>
-					<near>0.02</near>
-					<far>300</far>
-				</clip>
-			</camera>
-
-			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-				<alwaysOn>true</alwaysOn>
-				<updateRate>0.0</updateRate>
-				<cameraName>multicambot/camera_front</cameraName>
-				<imageTopicName>image_raw</imageTopicName>
-				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-				<frameName>camera_link</frameName>
-				<hackBaseline>0.07</hackBaseline>
-				<distortionK1>0.0</distortionK1>
-				<distortionK2>0.0</distortionK2>
-				<distortionK3>0.0</distortionK3>
-				<distortionT1>0.0</distortionT1>
-				<distortionT2>0.0</distortionT2>
-			</plugin>
-		</sensor>
-	</gazebo>
-
 	<gazebo reference="camera_left0">
 		<sensor type="camera" name="camera_left0">
 			<update_rate>30.0</update_rate>
 			<camera name="left0">
 				<horizontal_fov>1.3962634</horizontal_fov>
 				<image>
-					<width>800</width>
-					<height>600</height>
+					<width>640</width>
+					<height>480</height>
 					<format>R8G8B8</format>
 				</image>
 				<clip>
@@ -92,80 +57,14 @@
 		</sensor>
 	</gazebo>
 
-	<gazebo reference="camera_left1">
-		<sensor type="camera" name="camera_left1">
-			<update_rate>30.0</update_rate>
-			<camera name="left1">
-				<horizontal_fov>1.3962634</horizontal_fov>
-				<image>
-					<width>800</width>
-					<height>600</height>
-					<format>R8G8B8</format>
-				</image>
-				<clip>
-					<near>0.02</near>
-					<far>300</far>
-				</clip>
-			</camera>
-
-			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-				<alwaysOn>true</alwaysOn>
-				<updateRate>0.0</updateRate>
-				<cameraName>multicambot/camera_left1</cameraName>
-				<imageTopicName>image_raw</imageTopicName>
-				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-				<frameName>camera_link</frameName>
-				<hackBaseline>0.07</hackBaseline>
-				<distortionK1>0.0</distortionK1>
-				<distortionK2>0.0</distortionK2>
-				<distortionK3>0.0</distortionK3>
-				<distortionT1>0.0</distortionT1>
-				<distortionT2>0.0</distortionT2>
-			</plugin>
-		</sensor>
-	</gazebo>
-
-	<gazebo reference="camera_back">
-		<sensor type="camera" name="camera_back">
-			<update_rate>30.0</update_rate>
-			<camera name="back">
-				<horizontal_fov>1.3962634</horizontal_fov>
-				<image>
-					<width>800</width>
-					<height>600</height>
-					<format>R8G8B8</format>
-				</image>
-				<clip>
-					<near>0.02</near>
-					<far>300</far>
-				</clip>
-			</camera>
-
-			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-				<alwaysOn>true</alwaysOn>
-				<updateRate>0.0</updateRate>
-				<cameraName>multicambot/camera_back</cameraName>
-				<imageTopicName>image_raw</imageTopicName>
-				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-				<frameName>camera_link</frameName>
-				<hackBaseline>0.07</hackBaseline>
-				<distortionK1>0.0</distortionK1>
-				<distortionK2>0.0</distortionK2>
-				<distortionK3>0.0</distortionK3>
-				<distortionT1>0.0</distortionT1>
-				<distortionT2>0.0</distortionT2>
-			</plugin>
-		</sensor>
-	</gazebo>
-
 	<gazebo reference="camera_right0">
 		<sensor type="camera" name="camera_right0">
 			<update_rate>30.0</update_rate>
 			<camera name="right0">
 				<horizontal_fov>1.3962634</horizontal_fov>
 				<image>
-					<width>800</width>
-					<height>600</height>
+					<width>640</width>
+					<height>480</height>
 					<format>R8G8B8</format>
 				</image>
 				<clip>
@@ -178,39 +77,6 @@
 				<alwaysOn>true</alwaysOn>
 				<updateRate>0.0</updateRate>
 				<cameraName>multicambot/camera_right0</cameraName>
-				<imageTopicName>image_raw</imageTopicName>
-				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-				<frameName>camera_link</frameName>
-				<hackBaseline>0.07</hackBaseline>
-				<distortionK1>0.0</distortionK1>
-				<distortionK2>0.0</distortionK2>
-				<distortionK3>0.0</distortionK3>
-				<distortionT1>0.0</distortionT1>
-				<distortionT2>0.0</distortionT2>
-			</plugin>
-		</sensor>
-	</gazebo>
-
-	<gazebo reference="camera_right1">
-		<sensor type="camera" name="camera_right1">
-			<update_rate>30.0</update_rate>
-			<camera name="right1">
-				<horizontal_fov>1.3962634</horizontal_fov>
-				<image>
-					<width>800</width>
-					<height>600</height>
-					<format>R8G8B8</format>
-				</image>
-				<clip>
-					<near>0.02</near>
-					<far>300</far>
-				</clip>
-			</camera>
-
-			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-				<alwaysOn>true</alwaysOn>
-				<updateRate>0.0</updateRate>
-				<cameraName>multicambot/camera_right1</cameraName>
 				<imageTopicName>image_raw</imageTopicName>
 				<cameraInfoTopicName>camera_info</cameraInfoTopicName>
 				<frameName>camera_link</frameName>
