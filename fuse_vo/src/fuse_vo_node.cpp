@@ -1,4 +1,4 @@
-#include <fuse_VO/fuse_VO.h>
+#include <fuse_vo/fuse_vo.h>
 #include <ros/ros.h>
 
 int main(int argc, char **argv) {
