@@ -2,7 +2,7 @@
 #include <ros/ros.h>
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "fuse_VO");
+    ros::init(argc, argv, "fuse_vo");
     ros::NodeHandle nh;
     ros::NodeHandle pnh("~");
     fuse_vo::FuseVO detector(nh, pnh);

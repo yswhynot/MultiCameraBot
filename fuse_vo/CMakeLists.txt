@@ -10,11 +10,13 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
   std_msgs
-  Eigen REQUIRED
 )
+
+LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+find_package(Eigen3 3.1.0 REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -68,11 +70,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  geometry_msgs
-  std_msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   geometry_msgs
+#   std_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -107,7 +109,7 @@ catkin_package(
  INCLUDE_DIRS include
  LIBRARIES fuse_vo
  CATKIN_DEPENDS cmake_modules geometry_msgs message_runtime roscpp std_msgs
- DEPENDS system_lib eigen
+ DEPENDS system_lib Eigen3
 )
 
 ###########
@@ -118,7 +120,9 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
+  ${EIGEN3_INCLUDE_DIR}
   ${catkin_INCLUDE_DIRS}
+  ${PROJECT_SOURCE_DIR}/include
 )
 
 ## Declare a C++ library
@@ -166,7 +170,7 @@ install(TARGETS fuse_vo fuse_vo_node
 )
 
 ## Mark cpp header files for installation
-install(DIRECTORY include/fuse_vo/
+install(DIRECTORY include/fuse_vo
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE
